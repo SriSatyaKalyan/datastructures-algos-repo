@@ -28,7 +28,7 @@ public class selectionSortImplementation {
         }
     }
 
-    private static int[] swap(int[] arr, int indexWithMaxValue, int lastUnsortedIndex) {
+    public static int[] swap(int[] arr, int indexWithMaxValue, int lastUnsortedIndex) {
         arr[indexWithMaxValue] = arr[indexWithMaxValue] + arr[lastUnsortedIndex];
         arr[lastUnsortedIndex] = arr[indexWithMaxValue] - arr[lastUnsortedIndex];
         arr[indexWithMaxValue] = arr[indexWithMaxValue] - arr[lastUnsortedIndex];
