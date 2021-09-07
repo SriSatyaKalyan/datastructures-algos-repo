@@ -13,7 +13,7 @@ public class shellSortImplementationOfBubbleSort {
         int gap = arr.length/2;
         while(gap >0){
             int j = arr.length;
-            while(j > 0){
+            while(j > gap){
                 for(int i=0; i+gap < j; i++) {
                     if (arr[i] > arr[i + gap]) {
                         selectionSortImplementation.swap(arr, i, i+gap);
