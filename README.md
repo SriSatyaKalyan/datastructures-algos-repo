@@ -22,3 +22,9 @@ Merge Sort:
 * Not In-place
 * Stable
 * O(nlog(n)) - base 2 - Repeated dividing of the array into half during the splitting phase
+
+Quick Sort:
+* In-place
+* Unstable
+* O(nlog(n)) - base 2 - Repeated dividing of the array into two halves
+* The choice of pivot can have an impact on the time-complexity

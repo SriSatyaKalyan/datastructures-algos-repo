@@ -1,12 +1,14 @@
 package academy.learnprogramming.dataStructures;
 
+import resources.actions;
+
 public class shellSortImplementationOfInsertionSort {
     public static void main(String[] args) {
         int[] arr = {20, 35, -15, 7, 55, 1, -22, -19, 23, 45, -22, -100};
-        bubbleSortImplementation.printArray(arr);
+        actions.printArray(arr);
 
         shellInsertionSorter(arr);
-        bubbleSortImplementation.printArray(arr);
+        actions.printArray(arr);
     }
 
     private static void shellInsertionSorter(int[] arr) {

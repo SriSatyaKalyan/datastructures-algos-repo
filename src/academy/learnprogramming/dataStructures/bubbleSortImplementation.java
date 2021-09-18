@@ -1,12 +1,14 @@
 package academy.learnprogramming.dataStructures;
 
+import resources.actions;
+
 public class bubbleSortImplementation {
     public static void main(String[] args) {
         int[] arr = {50, -40, 30, -20, 1000, 5};
-        printArray(arr);
+        actions.printArray(arr);
 
         bubbleSorter(arr);
-        printArray(arr);
+        actions.printArray(arr);
     }
 
     private static void bubbleSorter(int[] arr) {
@@ -26,12 +28,5 @@ public class bubbleSortImplementation {
         arr[i+1] = arr[i] - arr[i+1];
         arr[i]   = arr[i] - arr[i+1];
         return arr;
-    }
-
-    public static void printArray(int[] arr){
-        for(int k: arr){
-            System.out.print(k + " ");
-        }
-        System.out.println(" ");
     }
 }

@@ -1,16 +1,16 @@
 package academy.learnprogramming.dataStructures;
 
-import static academy.learnprogramming.dataStructures.bubbleSortImplementation.printArray;
+import resources.actions;
 
 public class selectionSortImplementation {
     public static void main(String[] args) {
         int[] arr = {50, -40, 30, -20, 1000, 5};
         System.out.print("Unsorted Array: ");
-        printArray(arr);
+        actions.printArray(arr);
 
         selectionSorter(arr);
         System.out.print("Sorted Array: ");
-        printArray(arr);
+        actions.printArray(arr);
     }
 
     private static void selectionSorter(int[] arr) {
