@@ -4,7 +4,6 @@ import resources.actions;
 
 public class insertionSortImplementation {
     public static void main(String[] args) {
-//        int[] arr = {50, -40, 30, -20, 1000, 5};
         int[] arr = {20, 35, -15, 7, 55, 1, -22};
         actions.printArray(arr);
 
