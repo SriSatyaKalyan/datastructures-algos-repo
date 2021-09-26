@@ -53,5 +53,15 @@ Counting Sort:
 > 3. Only works with non-negative discrete values (can't work with floats, strings)
 > 4. Values must be within a specific range
 >> * Not an in-place algorithm
->> * 0(n) - can be achieved because we are making assumptions about the data we are sorting
 >> * For this to be stable, we have to perform extra steps
+>> * 0(n) - can be achieved because we are making assumptions about the data we are sorting
+
+Radix Sort:
+> The idea of Radix Sort is to do digit by digit sort starting from least significant digit to most significant digit. Radix sort uses counting sort as a subroutine to sort.
+> 1. Makes assumptions about the data
+> 2. Data must have the same radix and width. So, data must be integers or strings
+> 3. Start at the right-most position
+> 4. Must use a stable sort algorithm at each stage. We use Stable Counting Sort
+>> * In-place depending on which algorithm we use
+>> * Stable
+>> * O(n) - If we are making assumptions about the data we are sorting. Often runs slower than O(n log n) because of the overhead involved

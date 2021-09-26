@@ -8,6 +8,7 @@ public class countingSortImplementation {
         int[] arr = {2, 7, 4, 2, 8, 0, 9};
         actions.printArray(arr);
 
+        //If we do not know the min and max, we should calculate them of course
         countingSorter(arr, 0, 9);
         actions.printArray(arr);
     }
