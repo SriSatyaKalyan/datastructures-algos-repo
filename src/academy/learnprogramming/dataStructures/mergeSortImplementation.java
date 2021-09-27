@@ -5,7 +5,6 @@ import resources.actions;
 public class mergeSortImplementation {
     public static void main(String[] args) {
         int[] arr = {50, -40, 30, -20, 1000, 5};
-//        int[] arr = {20, 30, 10};
         actions.printArray(arr);
 
         mergeSorter(arr, 0 , arr.length);

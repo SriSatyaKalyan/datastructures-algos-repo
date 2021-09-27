@@ -39,14 +39,14 @@ Divide and Conquer Algorithm
 >> * Stable
 >> * O(nlog(n)) - base 2 - Repeated dividing of the array into half during the splitting phase
 
-Quick Sort:
+### Quick Sort:
 Divide and Conquer Algorithm
 > It picks an element as pivot and partitions the given array around the picked pivot. The choice of pivot can have an impact on the time-complexity.
 >> * In-place
 >> * Unstable
 >> * O(nlog(n)) - base 2 - Repeated dividing of the array into two halves 
 
-Counting Sort:
+### Counting Sort:
 > Counting sort is an algorithm for sorting a collection of objects according to keys that are small positive integers; that is, it is an integer sorting algorithm. It operates by counting the number of objects that possess distinct key values, and applying prefix sum on those counts to determine the positions of each key value in the output sequence.
 > 1. Doesn't use comparisons 
 > 2. Counts the number of occurrences of each values 
@@ -56,7 +56,7 @@ Counting Sort:
 >> * For this to be stable, we have to perform extra steps
 >> * 0(n) - can be achieved because we are making assumptions about the data we are sorting
 
-Radix Sort:
+### Radix Sort:
 > The idea of Radix Sort is to do digit by digit sort starting from least significant digit to most significant digit. Radix sort uses counting sort as a subroutine to sort.
 > 1. Makes assumptions about the data
 > 2. Data must have the same radix and width. So, data must be integers or strings
