@@ -12,7 +12,7 @@ public class radixSortImplementation {
     }
 
     public static void radixSort(int[] arr, int radix, int width){
-        for(int position=0; position < arr.length; position++){
+        for(int position=0; position < width; position++){
             radixSingleSort(arr, position, radix);
         }
     }

@@ -8,4 +8,11 @@ public class actions {
         }
         System.out.println(" ");
     }
+
+    public static void printArray(String[] arr) {
+        for(String k: arr){
+            System.out.print(k + " ");
+        }
+        System.out.println(" ");
+    }
 }
