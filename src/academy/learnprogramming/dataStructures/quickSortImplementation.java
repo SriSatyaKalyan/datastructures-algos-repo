@@ -28,12 +28,14 @@ public class quickSortImplementation {
         //While loop to make sure that i is less than j
         while(i < j){
             //Empty while loop to find an element lesser than pivot from the end of the array
+            //We are pre-incrementing because j points to the length and it is 1 more than the actual size of the array
             while(i<j && arr[--j] >= pivot);
             if(i<j){
                 arr[i] = arr[j];
             }
 
             //Empty while loop to find an element greater than pivot from the start of the array
+            //We are pre-incrementing because arr[i] before the loop starts is the pivot.
             while(i<j && arr[++i] <= pivot);
             if(i<j){
                 arr[j] = arr[i];
