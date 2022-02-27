@@ -65,3 +65,10 @@ Divide and Conquer Algorithm
 >> * In-place depending on which algorithm we use
 >> * Stable
 >> * O(n) - If we are making assumptions about the data we are sorting. Often runs slower than O(n log n) because of the overhead involved
+
+List of LeetCode Questions (to be done):
+* https://leetcode.com/list/
+
+Questions to do again in CTCI:
+* 10.7 Missing Int
+* 10.8  Find Duplicates
