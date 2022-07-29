@@ -14,6 +14,7 @@ public class _049groupAnagrams {
             System.out.println(lists);
         }
     }
+
     public static List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> newList = new ArrayList<List<String>>();
         HashMap<String, List<String>> map  = new HashMap<>();
@@ -21,7 +22,7 @@ public class _049groupAnagrams {
         for(String str: strs){
             char sortedString[] = (str.toCharArray());
             Arrays.sort(sortedString);
-            System.out.println("String is: " + str + " => Sorted String: " + String.valueOf(sortedString));
+//            System.out.println("String is: " + str + " => Sorted String: " + String.valueOf(sortedString));
             if(!map.containsKey(String.valueOf(sortedString))){
                 List<String> listOfAnagrams =  new ArrayList<>();
                 listOfAnagrams.add(str);
