@@ -1,0 +1,86 @@
+class FixedMultiStack{
+    private int numberOfStacks = 3;
+    private int stackCapacity;
+    private int[] values;
+    private int[] valuesExtended;
+    private int[] sizes;
+}
+
+public FixedMultiStack(int stackSize){
+    stackCapacity = stackSize;
+    values = new int[stackSize * numberOfStacks];
+    sizes = new int[numberOfStacks];
+}
+
+public extendThisStack(int[] values, int stackSize){
+    int nullFiller = 0;
+    valuesExtended = new int[stackSize * numberOfStacks];
+    for(int i=0; i < numberOfStacks; i++){
+
+        //Copying elements of values into valuesExtended
+        System.arraycopy(values, (i*stackSize/2), valuesExtended, (i*stackSize), sizes[i]);
+        nullFiller = stackSize-sizes[i];
+        int offset = stackNum * stackCapacity;
+
+        //Filling the freespaces with null;
+        while(nullFiller > 0){
+            valuesExtended[offset + (sizes[i]) + nullFiller - 1] = null;
+            nullFiller--;
+        }
+
+        values = new int[stackSize * numberOfStacks];
+        values = valuesExtended;
+    }
+}
+
+//Returns index of the top of the stack
+private int indexOfTop(int stackNum){
+    int offset = stackNum * stackCapacity;
+    int size = sizes[stackNum];
+    return (offset + size - 1);
+}
+
+//Push value onto stack
+public void push(int stackNum, int value) throws FullStackException{
+
+   //Check that we have space for the next element
+   if(isFull(stackNum)){
+        extendThisStack(values, stackSize*2);
+   }
+
+   //Increment stack pointer and then update top value
+   sizes[stackNum]++;
+   values[indexOfTop(stackNum)] = value;
+}
+
+//Pop item from top of the stack
+public int pop(int stackNum){
+    if(isEmpty(stackNum)){
+        throw new EmptyStackException();
+    }
+
+    int value = values[indexOfTop(stackNum)];
+    values[indexOfTop(stackNum)] = null;
+    sizes[stackNum]--;
+    return value;
+}
+
+//To peek top element, we just return the value and leave it as is
+public int peek(int stackNum){
+    if(isEmpty(stackNum)){
+        throw new EmptyStackException();
+    }
+
+    int value = values[indexOfTop(stackNum)];
+    return value;
+}
+
+//To check if stack is empty
+public boolean isEmpty(int stackNum){
+    return (sizes[stackNum] == 0);
+}
+
+//To check if stack is full
+public boolean isEmpty(int stackNum){
+    return (sizes[stackNum] == stackCapacity);
+}
