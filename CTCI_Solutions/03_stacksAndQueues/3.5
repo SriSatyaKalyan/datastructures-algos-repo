@@ -1,0 +1,48 @@
+class MyQueue {
+
+    private LinkedList<Integer> stack;
+    private LinkedList<Integer> tempStack;
+    private int minValue;
+
+    public MyQueue() {
+        stack = new LinkedList<Integer>();
+        tempStack = new LinkedList<Integer>();
+        minValue = -1;
+    }
+
+    public void push(int x) {
+        if(val < minValue){
+            minValue = val;
+            stack.push(val);
+        }else{
+            while(stack.peek() > val){
+                tempStack.push(stack.pop());
+            }
+            stack.push(val);
+            while(!tempStack.isEmpty()){
+                stack.push(tempStack.pop())
+            }
+        }
+    }
+
+    public int pop() {
+        return stack.pop();
+    }
+
+    public int peek() {
+        return stack.peek();
+    }
+
+    public boolean empty() {
+        return stack.isEmpty();
+    }
+}
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue obj = new MyQueue();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.peek();
+ * boolean param_4 = obj.empty();
+ */
