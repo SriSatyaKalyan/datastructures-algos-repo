@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+
+        Hashtable<Integer, Integer> table = new Hashtable<Integer, Integer>();
+
+        for(int i=0; i < nums.length; i++){
+            if(!table.containsKey(nums[i])){
+                table.put(nums[i], 1);
+            }else{
+                table.put(nums[i], table.get(nums[i]) + 1);
+            }
+        }
+
+        int pairs = 0;
+        Set<Integer> setOfKeys = table.keySet();
+        for(Integer key:setOfKeys){
+            if(table.get(key) > 1){
+                pairs += ((table.get(key)) * ((table.get(key)) - 1))/2;
+            }
+
+        }
+
+        return pairs;
+    }
+}

@@ -81,7 +81,7 @@ public class Tree {
             }else if(subTreeRoot.getRightChild() == null){
                 return subTreeRoot.getLeftChild();
             } //Case 3: node to delete has 2 children
-              //We should either always go to the right or left.  
+              //We should either always go to the right or left.
             //Replace the value in the subTreeRoot node with the smallest value from the right subTree
             subTreeRoot.setData(subTreeRoot.getRightChild().min());
 
