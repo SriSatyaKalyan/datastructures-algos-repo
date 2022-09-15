@@ -25,3 +25,22 @@ class Solution {
         return pairs;
     }
 }
+
+//Time Complexity: O(n)
+//Space Complexity: O(1)
+
+A simpler solution:
+
+// O(n) - TC
+
+int cnt = 0;
+
+// creating temp array of size 100, depending on the constraints of
+//1 <= nums[i] <= 100
+
+int[] temp = new int[101];
+for(int i=0;i<n;i++){
+    cnt += temp[nums[i]];
+    temp[nums[i]]++;
+}
+return cnt;
