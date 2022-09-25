@@ -1,0 +1,55 @@
+class Solution {
+
+    private boolean hasPath = false;
+    public boolean validPath(int n, int[][] edges, int source, int destination) {
+
+        if(source == destination) return true;
+
+        Map<Integer, Set<Integer>> graph = buildGraph(edges);
+        bfs(graph, source, destination);
+
+        return hasPath;
+    }
+
+    private Map<Integer, Set<Integer>> buildGraph(int[][] edges){
+        Map<Integer, Set<Integer>> graph = new HashMap<>();
+
+        for(int[] edge: edges){
+            insertAtGraph(edge[0], edge[1], graph);
+            insertAtGraph(edge[1], edge[0], graph);
+        }
+
+        return graph;
+    }
+
+    private void insertAtGraph(int key, int value, Map<Integer, Set<Integer>> map){
+        if(map.containsKey(key)){
+            map.get(key).add(value);
+        }else{
+            Set<Integer> list = new HashSet<>();
+            list.add(value);
+            map.put(key, list);
+        }
+    }
+
+    private void bfs(Map<Integer, Set<Integer>> graph, int source, int destination){
+        Queue<Integer> queue = new ArrayDeque<>(List.of(source));
+        Set<Integer> visited = new HashSet<>();
+
+        while(!queue.isEmpty()){
+            int current = queue.remove();
+            if(current == destination){
+                hasPath = true;
+                return;
+            }
+
+            visited.add(current);
+            for(int child: graph.get(current)){
+                if(!visited.contains(child)){
+                    queue.add(child);
+                }
+            }
+
+        }
+    }
+}

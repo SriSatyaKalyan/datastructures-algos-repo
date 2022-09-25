@@ -1,0 +1,21 @@
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        for(char j: jewels.toCharArray()){
+            map.put(j, 0);
+        }
+
+        int numOfJewels = 0;
+        for(char s: stones.toCharArray()){
+            if(map.containsKey(s)){
+                map.put(s, map.get(s)+1);
+                numOfJewels++;
+            }
+        }
+
+        return numOfJewels;
+    }
+}
+
+TC: O(Jewels.length() + Stones.length())
+SC: O(Jewels.length()) as the map's length would be as big as the Jewels string length
