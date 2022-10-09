@@ -21,7 +21,9 @@
 - [ ] Permutations
 - [ ] Subsets
 - [ ] BFS Graph
+  - [implementation](https://github.com/SriSatyaKalyan/datastructures-algos-repo/blob/main/src/academy/learnprogramming/graphs/traversals/graphSearchBFS.java)
 - [ ] DFS Graph
+  - [implementation](https://github.com/SriSatyaKalyan/datastructures-algos-repo/blob/main/src/academy/learnprogramming/graphs/traversals/graphSearchDFS.java)
 - [ ] Dijkstra's Algorithm (just learn the idea - no need to implement)
 - [ ] Tree Traversals - BFS & DFS (in-order, pre-order, post-order): Implement Recursive and Iterative
 - [ ] External Sort - No implementation; Just know the concept
