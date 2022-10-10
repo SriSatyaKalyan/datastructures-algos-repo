@@ -11,7 +11,7 @@
 
 ## Algorithms
 
-- [ ] Bit Maipulation & Numbers - difference between Unsigned vs signed numbers
+- [ ] Bit Manipulation & Numbers - difference between Unsigned vs signed numbers
 - [ ] Stability in Sorting
 - [ ] Mergesort
 - [ ] Quicksort
@@ -32,7 +32,7 @@
 - [ ] Detect cycle in an undirected graph
 - [ ] Detect cycle in directed graph
 - [ ] Count connected components in a graph
-- [ ] Find strongly connected componenets in a graph
+- [ ] Find strongly connected components in a graph
 
 ## Prep Work
 
@@ -40,9 +40,9 @@
 - [ ] Reverse a linked list
 - [ ] Implement a Stack & a Queue using an array
 - [ ] Implement a HashTable with simple Hashing functions
-- [ ] Implement a Graph using Adjacency ist, and then write functions for BFS & DFS
-- [ ] Write a binary search algorith both recursively and iteratively
-- [ ] Write the merge sort algorithm and quicksrot algorithm
+- [X] Implement a Graph using Adjacency ist, and then write functions for BFS & DFS
+- [ ] Write a binary search algorithm both recursively and iteratively
+- [ ] Write the merge sort algorithm and quicksort algorithm
 - [ ] Print binary tree using DFS (in-order, preorder and post order -all three of them) and BFS
 - [ ] Memorize time & space complexities for common algorithms
 - [ ] Implement a trie

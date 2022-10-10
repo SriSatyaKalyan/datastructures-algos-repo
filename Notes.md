@@ -36,6 +36,7 @@ Time and space complexuty depend on lots of things like hardware, operating syst
 - There are connected and disconnected graphs
 - Adjacency matrix or Adjacency List are used to represent graphs programmatically
 - There are two different implementations to traverse graphs - Breadth First Search and Depth First Search. BFS is implemented using Queue. DFS is implemented using Stack.
+- If it has not been explicitly mentioned, always account for cycles in the graphs
 
 - I have stopped the [video](#https://www.youtube.com/watch?v=tWVWeAqZ0WU&t=4409s&ab_channel=freeCodeCamp.org) at ==largest component count== chapter
 
