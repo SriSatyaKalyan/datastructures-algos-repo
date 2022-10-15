@@ -32,6 +32,7 @@
 - [ ] Detect cycle in an undirected graph
 - [ ] Detect cycle in directed graph
 - [ ] Count connected components in a graph
+  - [implementation](https://github.com/SriSatyaKalyan/datastructures-algos-repo/blob/main/src/academy/learnprogramming/graphs/problems/connectedComponentsGraph.java)
 - [ ] Find strongly connected components in a graph
 
 ## Prep Work
@@ -40,7 +41,7 @@
 - [ ] Reverse a linked list
 - [ ] Implement a Stack & a Queue using an array
 - [ ] Implement a HashTable with simple Hashing functions
-- [X] Implement a Graph using Adjacency ist, and then write functions for BFS & DFS
+- [X] Implement a Graph using Adjacency list, and then write functions for BFS & DFS
 - [ ] Write a binary search algorithm both recursively and iteratively
 - [ ] Write the merge sort algorithm and quicksort algorithm
 - [ ] Print binary tree using DFS (in-order, preorder and post order -all three of them) and BFS
