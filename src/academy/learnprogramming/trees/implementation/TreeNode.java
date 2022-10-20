@@ -1,4 +1,4 @@
-package academy.learnprogramming.trees;
+package academy.learnprogramming.trees.implementation;
 
 public class TreeNode {
 

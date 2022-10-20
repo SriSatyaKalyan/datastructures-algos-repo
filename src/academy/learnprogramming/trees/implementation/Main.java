@@ -1,4 +1,4 @@
-package academy.learnprogramming.trees;
+package academy.learnprogramming.trees.implementation;
 
 public class Main {
 
@@ -17,8 +17,13 @@ public class Main {
         intTree.insert(17);
 
         //traversal of trees
+        System.out.println("In Order");
         intTree.traverseInOrder();
+
+        System.out.println("Pre Order");
         intTree.traversePreOrder();
+
+        System.out.println("Post Order");
         intTree.traversePostOrder();
 
         //Testing how get works
