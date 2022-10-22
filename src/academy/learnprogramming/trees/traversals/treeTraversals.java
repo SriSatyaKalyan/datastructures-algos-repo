@@ -82,18 +82,12 @@ public class treeTraversals {
 
     private static int calculateTreeSumRecursion(TreeNode root, int targetSum, int sumSoFar, boolean hasPath) {
         if(root == null) return 0;
-//        System.out.println("root.val: " + root.val + " | " + "sumSoFar: " + sumSoFar);
         sumSoFar = root.val + sumSoFar;
-//        System.out.println("root.val: " + root.val + " | " + "sumSoFar: " + sumSoFar);
         if((root.left == null) && (root.right == null) && sumSoFar ==  targetSum){
-//            System.out.println("Changing hasPath to true");
             hasPath = true;
         }
-//        System.out.println("--------------------");
         return calculateTreeSumRecursion(root.left, targetSum, sumSoFar, hasPath) + calculateTreeSumRecursion(root.right, targetSum, sumSoFar, hasPath);
     }
-
-//    ------------------------------------------------------------------------------------------------
 
     private static int calculateTreeSumRecursion(TreeNode root) {
         if(root ==  null) return 0;
