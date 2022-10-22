@@ -22,23 +22,23 @@ public class treeTraversals {
     public static void main(String[] args) {
         TreeNode root = new TreeNode();
 
-        root.val = 1;
-        root.left = new TreeNode(2, new TreeNode(4), new TreeNode(5));
-        root.right = new TreeNode(3, new TreeNode(6), new TreeNode(7));
+//        root.val = 1;
+//        root.left = new TreeNode(2, new TreeNode(4), new TreeNode(5));
+//        root.right = new TreeNode(3, new TreeNode(6), new TreeNode(7));
 //              1
 //           /     \
 //          2       3
 //         /  \    /  \
 //        4    5  6    7
 
-//        root.val = 3;
-//        root.left = new TreeNode(11, new TreeNode(4), new TreeNode(2));
-//        root.right = new TreeNode(4, null , new TreeNode(1));
+        root.val = 3;
+        root.left = new TreeNode(11, new TreeNode(4), new TreeNode(3));
+        root.right = new TreeNode(4, null , new TreeNode(2));
 //              3
 //           /     \
 //          11      4
 //         /  \      \
-//        4    2      1
+//        4    3      2
 
 //        root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
 //        1
@@ -69,24 +69,36 @@ public class treeTraversals {
         System.out.println("The sum of the tree is: " + calculateTreeSumBFS(root));
         System.out.println("The sum of the tree is: " + calculateTreeSumRecursion(root));
 
-        int targetSum = 5;
+        int targetSum = 9;
         System.out.println("Does a pathSum exist for targetSum of " + targetSum + "?: " + hasPathSum(root, targetSum));
+        System.out.println("The minimum value of the tree is: " + treeMinValue(root));
     }
 
+    private static int treeMinValue(TreeNode root) {
+        if(root == null) return -1;
+
+        return calculateSmallerNode(root);
+    }
+
+    private static int calculateSmallerNode(TreeNode root) {
+        double inf = Double.POSITIVE_INFINITY;
+        if(root.left == null && root.right == null) { return (int) inf; }
+        if(root.left == null) { return root.right.val; }
+        if(root.right == null) { return root.left.val; }
+        return Math.min(root.val, Math.min(calculateSmallerNode(root.left), calculateSmallerNode(root.right)));
+    }
 
     private static boolean hasPathSum(TreeNode root, int targetSum) {
-        boolean hasPath = false;
-        calculateTreeSumRecursion(root, targetSum, 0, hasPath);
-        return hasPath;
+        return calculateTreeSumRecursion(root, targetSum, 0);
     }
 
-    private static int calculateTreeSumRecursion(TreeNode root, int targetSum, int sumSoFar, boolean hasPath) {
-        if(root == null) return 0;
+    private static boolean calculateTreeSumRecursion(TreeNode root, int targetSum, int sumSoFar) {
+        if(root == null) return false;
         sumSoFar = root.val + sumSoFar;
-        if((root.left == null) && (root.right == null) && sumSoFar ==  targetSum){
-            hasPath = true;
+        if((root.left == null) && (root.right == null)){
+            return (sumSoFar ==  targetSum);
         }
-        return calculateTreeSumRecursion(root.left, targetSum, sumSoFar, hasPath) + calculateTreeSumRecursion(root.right, targetSum, sumSoFar, hasPath);
+        return (calculateTreeSumRecursion(root.left, targetSum, sumSoFar) || calculateTreeSumRecursion(root.right, targetSum, sumSoFar));
     }
 
     private static int calculateTreeSumRecursion(TreeNode root) {
@@ -94,7 +106,6 @@ public class treeTraversals {
 
         return root.val + calculateTreeSumRecursion(root.left) + calculateTreeSumRecursion(root.right);
     }
-
 
     private static int calculateTreeSumBFS(TreeNode root) {
         int sum = 0;
@@ -142,7 +153,6 @@ public class treeTraversals {
             list.add(root.val);
         }
     }
-
 
     private static List<Integer> inOrderTraversalDFS(TreeNode root) {
         if(root == null) { return null; }
