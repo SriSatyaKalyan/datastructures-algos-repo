@@ -1,7 +1,10 @@
 package academy.learnprogramming.trees.traversals;
 
+import academy.learnprogramming.trees.implementation.Tree;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 public class treeTraversals {
@@ -22,18 +25,18 @@ public class treeTraversals {
     public static void main(String[] args) {
         TreeNode root = new TreeNode();
 
-//        root.val = 1;
-//        root.left = new TreeNode(2, new TreeNode(4), new TreeNode(5));
-//        root.right = new TreeNode(3, new TreeNode(6), new TreeNode(7));
+        root.val = 1;
+        root.left = new TreeNode(2, new TreeNode(4), new TreeNode(5));
+        root.right = new TreeNode(3, new TreeNode(6), new TreeNode(7));
 //              1
 //           /     \
 //          2       3
 //         /  \    /  \
 //        4    5  6    7
 
-        root.val = 3;
-        root.left = new TreeNode(11, new TreeNode(4), new TreeNode(3));
-        root.right = new TreeNode(4, null , new TreeNode(2));
+//        root.val = 3;
+//        root.left = new TreeNode(11, new TreeNode(4), new TreeNode(3));
+//        root.right = new TreeNode(4, null , new TreeNode(2));
 //              3
 //           /     \
 //          11      4
@@ -72,6 +75,57 @@ public class treeTraversals {
         int targetSum = 9;
         System.out.println("Does a pathSum exist for targetSum of " + targetSum + "?: " + hasPathSum(root, targetSum));
         System.out.println("The minimum value of the tree is: " + treeMinValue(root));
+
+        System.out.println("The max root to path sum is: " + maxRootToPathSum(root));
+
+        int[] nums = {0, 1, 2, 3, 4, 5};
+//                {-10, -3, 0, 5 ,9};
+//        System.out.println("Convert the array nums[] into BST: " + sortedArrayToBST(nums));
+
+        List<Integer> preOrderListII = preOrderTraversalDFS(sortedArrayToBST(nums));
+        System.out.print("preOrderTraversalDFS:   ");
+        for(int i : preOrderListII){
+            System.out.print(i + " | ");
+        }
+
+        inorderSuccessor(root, new TreeNode(3));
+    }
+
+    private static TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        if(root == null) { return null; }
+        ArrayList<TreeNode> q = new ArrayList<TreeNode>();
+
+
+        while(!q.isEmpty()){
+
+        }
+
+        return null;
+    }
+
+    private static TreeNode sortedArrayToBST(int[] nums) {
+        return insert(nums, 0, nums.length - 1);
+    }
+
+    private static TreeNode insert(int[] nums, int startIndex, int endIndex) {
+        if(startIndex > endIndex) return null;
+        int mid = (startIndex + endIndex) / 2;
+        TreeNode root = new TreeNode(nums[mid]);
+
+        root.left = insert(nums, startIndex, mid - 1);
+        root.right = insert(nums, mid + 1, endIndex);
+
+        return root;
+     }
+
+    private static int maxRootToPathSum(TreeNode root) {
+        return calculateRootPathSum(root, 0);
+    }
+
+    private static int calculateRootPathSum(TreeNode root, int sum) {
+        if(root == null) return sum;
+        sum = sum + root.val;
+        return Math.max(sum, Math.max(calculateRootPathSum(root.left, sum), calculateRootPathSum(root.right, sum)));
     }
 
     private static int treeMinValue(TreeNode root) {
