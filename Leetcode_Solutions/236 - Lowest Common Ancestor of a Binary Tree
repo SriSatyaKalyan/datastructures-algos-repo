@@ -1,0 +1,45 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+
+    private TreeNode ans;
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        this.recurseTree(root, p, q);
+        return this.ans;
+    }
+
+    private boolean recurseTree(TreeNode currentNode, TreeNode p, TreeNode q){
+
+        //if the end of the branch is reached, return false;
+        if(currentNode == null){
+            return false;
+        }
+
+        //Left Recursion. If the left recursion returns true, set left = 1 else 0
+        int left = this.recurseTree(currentNode.left, p, q) ? 1 : 0;
+
+        int right = this.recurseTree(currentNode.right, p, q) ? 1 : 0;
+
+        //if the current node is p or q
+        int mid = (currentNode == p || currentNode == q) ? 1 : 0;
+
+        //if any two of the flags left, right or mid become true
+        if(mid + left + right == 2){
+            this.ans = currentNode;
+        }
+
+        //return true if any of the three boolean values is true
+        return (mid + left + right > 0);
+    }
+}
+
+//TC: O(N), where N is the number of nodes in the binary tree. In the worst case, we might be visiting all the nodes of the binary tree
+//SC: O(N). This is because the maximum amount of space utilized by the recursion stack would be N since the height of a skewed binary tree could be N
