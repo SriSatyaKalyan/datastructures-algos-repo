@@ -48,3 +48,5 @@
 - [ ] Memorize time & space complexities for common algorithms
 - [ ] Implement a trie
 - [ ] Bit manipulation tricks
+
+## After finishing all of the above, go straight into learning [dynamic programming](https://www.youtube.com/watch?v=oBt53YbR9Kk&ab_channel=freeCodeCamp.org)
