@@ -2,11 +2,26 @@
 
 A Data Structure is about organizing and managing data effectively in order to perform a specific operation efficiently, while Algorithm is a step-by-step procedure to be followed to reach the desired output. Steps in an algorithm can use one or many data structures to solve a problem.
 
-__Time complexity__ of an algorithm quantifies the amount of time taken by an algorithm to run as a function of lenght of the input.
+__Time complexity__ of an algorithm quantifies the amount of time taken by an algorithm to run as a function of length of the input.
 
 __Space complexity__ of an alogorithm quantifies the amount of space/memory taken by an algorithm to run as a function of the length of the input. Auxiliary space is the extra space or temporary space used by an algorithm. Space complexity includes both auxiliary space and space used by input.
 
 Time and space complexuty depend on lots of things like hardware, operating system, processors etc. However, we will only consider the execution time of an algorithm.
+
+## Asymptotic Notations
+
+O - Big oh notation: works as an upper-bound of a function
+
+Ω - Big omega notation: works as a lower-bound of a function
+
+θ - Theta: works as an average bound of a function. The most useful is this.
+
+![Differences between different Asymptotic notations](https://github.com/SriSatyaKalyan/Images/blob/master/DataStructures%20Images/Screenshot%202023-05-07%20at%207.46.40%20PM.png)
+
+
+
+
+
 
 ### Dynamic Array
 - Contiguous block in memory
