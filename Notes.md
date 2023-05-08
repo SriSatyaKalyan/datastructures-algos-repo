@@ -12,15 +12,17 @@ Time and space complexuty depend on lots of things like hardware, operating syst
 
 O - Big oh notation: works as an upper-bound of a function
 
+![Big Oh Notation](https://github.com/SriSatyaKalyan/Images/blob/master/DataStructures%20Images/Big%20Oh%20Notation.png)
+
 Ω - Big omega notation: works as a lower-bound of a function
+
+![Omega Notation](https://github.com/SriSatyaKalyan/Images/blob/master/DataStructures%20Images/Omega%20Notation.png)
 
 θ - Theta: works as an average bound of a function. The most useful is this.
 
-![Differences between different Asymptotic notations](https://github.com/SriSatyaKalyan/Images/blob/master/DataStructures%20Images/Screenshot%202023-05-07%20at%207.46.40%20PM.png)
+![Theta Notation](https://github.com/SriSatyaKalyan/Images/blob/master/DataStructures%20Images/Theta%20Notation.png)
 
-
-
-
+This is not related to best case or worst case notation. This is purely to understand the bounds of a function.
 
 
 ### Dynamic Array
