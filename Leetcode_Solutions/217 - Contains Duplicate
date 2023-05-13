@@ -15,4 +15,4 @@ class Solution {
 }
 
 TC: O(n log(n)). Sorting is O(n log(n)) and the sweeping is O(n). The entire algorithm is dominated by the sorting step, and hence the time complexity
-SC: O(1). Space depends on the dorting implementation which, usually, costs O(1) auxiliary space if heapsort is used
+SC: O(1). Space depends on the sorting implementation which, usually, costs O(1) auxiliary space if heapsort is used

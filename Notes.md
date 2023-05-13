@@ -14,7 +14,7 @@ O - Big oh notation: works as an upper-bound of a function
 
 ![Big Oh Notation](https://github.com/SriSatyaKalyan/Images/blob/master/DataStructures%20Images/Big%20Oh%20Notation.png)
 
-Ω - Big omega notation: works as a lower-bound of a function
+Ω - Omega notation: works as a lower-bound of a function
 
 ![Omega Notation](https://github.com/SriSatyaKalyan/Images/blob/master/DataStructures%20Images/Omega%20Notation.png)
 
@@ -24,11 +24,19 @@ O - Big oh notation: works as an upper-bound of a function
 
 This is not related to best case or worst case notation. This is purely to understand the bounds of a function.
 
+For example, for `n!`, we cannot find a tight bound in terms of Big Oh or Omega as shown below. Because for smaller values of n, it is closer to `1` and for increasing larger values, it is closer to `n to the power of n`. Big Oh or Omega are used when we cannot provide the Theta value.
+
 
 ### Dynamic Array
 - Contiguous block in memory
 - Every element occupies the same amount of space in memory
 - If an array starts at memory address 'x', and the size of each element in the array is 'y', we can calculate the memory address of the 'i'th element by using the expression: (x + (i * y))
+
+**Arrays and Strings** can be solved using the following ways:
+- Hashtables 
+    - This can be implemented using an array, operating as a *Hashtable*, mapping character to frequency
+- ArrayList or Resizable Arrays
+- String Builder
 
 ### Linked List
 - XXXXXX
@@ -61,55 +69,5 @@ This is not related to best case or worst case notation. This is purely to under
 - Trie is used to re'trie'ving elements. They are sometimes called prefix trees or digital trees
 - It is a Tree data structure used for storing collections of strings
 - We can also use a HashTable but we cannot perform prefix based search and it would consume more memory
--
+- XXXX
 
-#### BFS problems
-- Flood Fill: https://leetcode.com/problems/flood-fill/
-- Number of Islands: https://leetcode.com/problems/number-of-islands/
-- Word Ladder I: https://leetcode.com/problems/word-ladder/
-- Word Ladder II: https://leetcode.com/problems/word-ladder-ii/
-- Evaluate Division: https://leetcode.com/problems/evaluate-division/
-- Get Watched Videos by Your Friends: https://leetcode.com/problems/get-watched-videos-by-your-friends/
-- Cut Off Trees for Golf Event: https://leetcode.com/problems/cut-off-trees-for-golf-event/
-
-#### DFS problems
-- Number of Islands: https://leetcode.com/problems/number-of-islands/
-- Flood Fill: https://leetcode.com/problems/flood-fill/
-- Longest Increasing Path in a Matrix: https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
-- Evaluate Division: https://leetcode.com/problems/evaluate-division/
-- Robot Room Cleaner: https://leetcode.com/problems/robot-room-cleaner/
-- Most Stones Removed with Same Row or Column: https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/
-- Reconstruct Itinerary: https://leetcode.com/problems/reconstruct-itinerary/
-- Tree Diameter: https://leetcode.com/problems/tree-diameter/
-- Accounts Merge: https://leetcode.com/problems/accounts-merge/
-
-#### Connected components problems
-- Number of Provinces: https://leetcode.com/problems/number-of-provinces/
-- Number of Connected Components in an Undirected Graph: https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
-- Number of Operations to Make Network Connected: https://leetcode.com/problems/number-of-operations-to-make-network-connected/
-- Accounts Merge: https://leetcode.com/problems/accounts-merge/
-- Critical Connections in a Network: https://leetcode.com/problems/critical-connections-in-a-network/
-#### Dijkstra's problems
-- Path With Maximum Minimum Valued: https://leetcode.com/problems/path-with-maximum-minimum-value/
-- Network delay time: https://leetcode.com/problems/network-delay-time/
-- Path with Maximum Probability: https://leetcode.com/problems/path-with-maximum-probability/
-- Path With Minimum Effort: https://leetcode.com/problems/path-with-minimum-effort/
-- Cheapest Flights Within K Stops: https://leetcode.com/problems/cheapest-flights-within-k-stops/
-#### Union Find problems
-- Number of Islands: https://leetcode.com/problems/number-of-islands/
-- Largest Component Size by Common Factor: https://leetcode.com/problems/largest-component-size-by-common-factor/
-- Most Stones Removed with Same Row or Column: https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/
-- Number of Connected Components in an Undirected Graph: https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
-#### Minimum Spanning Tree problems
-- Connecting Cities With Minimum Cost: https://leetcode.com/problems/connecting-cities-with-minimum-cost/
-- Min Cost to Connect All Points: https://leetcode.com/problems/min-cost-to-connect-all-points/
-#### Topological sort problems
-- Course Schedule : https://leetcode.com/problems/course-schedule/
-- Course Schedule II: https://leetcode.com/problems/course-schedule-ii/
-- Sequence Reconstruction: https://leetcode.com/problems/sequence-reconstruction/
-- Alien Dictionary: https://leetcode.com/problems/alien-dictionary/solution/
-#### Floyd Warshall problems
-- Find the City With the Smallest Number of Neighbors at a Threshold Distance: https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/
-- Network delay time: https://leetcode.com/problems/network-delay-time/
-#### Bellman Ford problems
-- Network delay time: https://leetcode.com/problems/network-delay-time/
