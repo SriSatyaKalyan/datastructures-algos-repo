@@ -26,6 +26,7 @@ This is not related to best case or worst case notation. This is purely to under
 
 For example, for `n!`, we cannot find a tight bound in terms of Big Oh or Omega as shown below. Because for smaller values of n, it is closer to `1` and for increasing larger values, it is closer to `n to the power of n`. Big Oh or Omega are used when we cannot provide the Theta value.
 
+***
 
 ### Dynamic Array
 - Contiguous block in memory
@@ -37,6 +38,13 @@ For example, for `n!`, we cannot find a tight bound in terms of Big Oh or Omega 
     - This can be implemented using an array, operating as a *Hashtable*, mapping character to frequency
 - ArrayList or Resizable Arrays
 - String Builder
+
+#### Points to Remember
+- Always ensure that the character set is either ASCII or Unicode
+- Check for case-sensitivity
+- Check for significance of white space
+- Ask if the operation has to be performed in-place
+ - If this is the case
 
 ### Linked List
 - XXXXXX
@@ -71,3 +79,10 @@ For example, for `n!`, we cannot find a tight bound in terms of Big Oh or Omega 
 - We can also use a HashTable but we cannot perform prefix based search and it would consume more memory
 - XXXX
 
+***
+
+## Questions
+- What is amortized runtime?
+- What is auxiliary space?
+- Differences between ASCII and Unicode strings?
+- Why is sorting O(n log(n)) runtime?
