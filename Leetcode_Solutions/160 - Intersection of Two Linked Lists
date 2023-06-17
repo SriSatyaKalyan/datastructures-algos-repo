@@ -1,0 +1,52 @@
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode p1 = headA;
+        ListNode p2 = headB;
+
+        //calculating lengths of both the lists
+        int lenA = 0;
+        int lenB = 0;
+
+        while(p1 != null){
+            lenA++;
+            p1 = p1.next;
+        }
+
+        while(p2 != null){
+            lenB++;
+            p2 = p2.next;
+        }
+
+
+        p1 = headA;
+        p2 = headB;
+
+        if(lenA != lenB){
+            if(lenA > lenB){
+                while(lenA != lenB){
+                    p1 = p1.next;
+                    lenA--;
+                }
+            }else{
+                while(lenA != lenB){
+                    p2 = p2.next;
+                    lenB--;
+                }
+            }
+        }
+
+        while(p1 != null){
+            if(p1 == p2){
+                return p1;
+            }
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+
+        return null;
+    }
+}
+
+TC: O(N+M). In the worst case, each list is traversed twice giving 2⋅M+2⋅N, which is equivalent to O(N+M).
+This is because the pointers firstly go down each list so that they can be "lined up" and then in the second iteration, the intersection node is searched for.
+SC: Space complexity : O(1). We aren't allocating any additional data structures, so the amount of extra space used does not grow with the size of the input.

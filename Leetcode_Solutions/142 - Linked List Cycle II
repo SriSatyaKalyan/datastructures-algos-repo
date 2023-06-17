@@ -1,0 +1,66 @@
+Hashset Implementation:
+
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        Set<ListNode> map = new HashSet<ListNode>();
+        while(head != null){
+            if(map.contains(head)){
+                return head;
+            }else{
+                map.add(head);
+            }
+
+            head = head.next;
+        }
+
+        return null;
+    }
+}
+
+TC: O(n) as we visit all the nodes once
+SC: O(n) as we are storing all nodes in the hash set
+
+Floyd's Tortoise and Hare Algorithm:
+
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        ListNode tortoise = head;
+        ListNode hare = head;
+
+        // Move tortoise one step and hare two steps
+        while (hare != null && hare.next != null) {
+            tortoise = tortoise.next;
+            hare = hare.next.next;
+
+            // Check if the hare meets the tortoise
+            if (tortoise == hare) {
+                break;
+            }
+        }
+
+        // Check if there is no cycle
+        if (hare == null || hare.next == null) {
+            return null;
+        }
+
+        // Reset either tortoise or hare pointer to the head
+        tortoise = head;
+
+        // Move both pointers one step until they meet again
+        while (tortoise != hare) {
+            tortoise = tortoise.next;
+            hare = hare.next;
+        }
+
+        // Return the node where the cycle begins
+        return tortoise;
+    }
+}
+
+TC: O(n)
+The algorithm consists of two phases. In the first phase, we use two pointers (the "hare" and the "tortoise") to traverse the list. The slow pointer (tortoise) will go through the list only once until it meets the hare. Therefore, this phase runs in O(n) time.
+In the second phase, we again have two pointers traversing the list at the same speed until they meet. The maximum distance to be covered in this phase will not be greater than the length of the list (recall that the hare just needs to get back to the entrance of the cycle). So, this phase also runs in O(n) time.
+As a result, the total time complexity of the algorithm is O(n)+O(n), which simplifies to O(n).
+
+SC: O(1).
+The space complexity is constant, O(1), because we are only using a fixed amount of space to store the slow and fast pointers. No additional space is used that scales with the input size. So the space complexity of the algorithm is O(1), which means it uses constant space.

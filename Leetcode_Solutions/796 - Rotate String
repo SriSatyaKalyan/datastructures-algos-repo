@@ -1,0 +1,21 @@
+class Solution {
+    public boolean rotateString(String s, String goal) {
+        if(s.length() == goal.length()){
+            StringBuilder sB = new StringBuilder(s);
+            int count = s.length();
+            while(count >= 0){
+                String newS = sB.append(sB.charAt(0)).deleteCharAt(0).toString();
+
+                if(newS.equals(goal)){
+                    return true;
+                }
+                count--;
+            }
+        }
+
+        return false;
+    }
+}
+
+TC: O(N^2), where N is the length of A. For each rotation s, we check up to N elements in A and B.
+SC: O(N). We are using StringBuilder which uses O(N) space for the length of the A/B.

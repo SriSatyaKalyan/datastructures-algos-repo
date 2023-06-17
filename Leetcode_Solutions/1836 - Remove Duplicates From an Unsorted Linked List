@@ -1,0 +1,29 @@
+import java.util.Hashtable;
+
+class Solution {
+    public ListNode deleteDuplicatesUnsorted(ListNode head) {
+        Map<Integer, Integer> map = new HashMap<>();
+        ListNode curr = head;
+        while (curr != null) {
+            map.put(curr.val, map.getOrDefault(curr.val, 0) + 1);
+            curr = curr.next;
+        }
+
+        ListNode dummy = new ListNode(0);
+        curr = dummy;
+        while (head != null) {
+            if (map.get(head.val) == 1) {
+                curr.next = head;
+                curr = curr.next;
+            }
+
+            head = head.next;
+        }
+
+        curr.next = null;
+        return dummy.next;
+    }
+}
+
+TC: Because this is a two-pass algorithm, TC will be O(n) + O(n) where n is the length of the list. So, the final TC will be O(n)
+SC: Because we are using a space for each node in the map, the SC will be O(n). As this Map increases in size depending on the list, this will be O(n)

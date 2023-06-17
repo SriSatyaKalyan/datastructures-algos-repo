@@ -1,0 +1,9 @@
+class Solution {
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+}
+
+TC: O(1) since only 1 node needs to be updated and we only traverse one node behind
+SC: O(1), since we use constant extra space to track the next node

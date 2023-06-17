@@ -1,0 +1,29 @@
+class Solution {
+    public ListNode partition(ListNode head, int x) {
+        ListNode parser = head;
+
+        ListNode smaller = new ListNode(0);
+        ListNode sP = smaller;
+        ListNode equalOrGreater = new ListNode(0);
+        ListNode eGP = equalOrGreater;
+
+        while(parser != null){
+            if(parser.val < x){
+                sP.next = parser;
+                sP =  sP.next;
+            }else{
+                eGP.next = parser;
+                eGP =  eGP.next;
+            }
+            parser = parser.next;
+        }
+        eGP.next = null;
+
+        sP.next = equalOrGreater.next;
+        return smaller.next;
+    }
+}
+
+TC: O(N), where N is the number of nodes in the original linked list and we iterate the original list
+SC: O(1), we have not utilized any extra space, the point to note is that we are reforming the original list, by moving the original nodes, we
+have not used any extra space as such

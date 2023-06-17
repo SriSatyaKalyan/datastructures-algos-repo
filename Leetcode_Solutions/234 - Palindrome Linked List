@@ -1,0 +1,18 @@
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+
+        ListNode dummy = head;
+        StringBuilder str = new StringBuilder();
+
+        while(dummy != null){
+            str.append(dummy.val);
+            dummy = dummy.next;
+        }
+
+        // System.out.print(str.toString() + " " + str.reverse().toString());
+        return str.toString().equals(str.reverse().toString());
+    }
+}
+
+TC: O(n) where n is the number of the nodes in the list
+SC: O(n) where n is the number of nodes in the Linked List, as that space is needed in the String Builder
