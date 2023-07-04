@@ -1,5 +1,3 @@
-3 - Longest Substring Without Repeating Characters
-
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         Map<Character, Integer> chars = new HashMap<>();

@@ -11,7 +11,7 @@
 ////    }
 //
 //    public static void main(String[] args) {
-//        ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3, null)));
+//        ListNode l1 = new ListNode(2 - Add Two Numbers, new ListNode(4, new ListNode(3 - Longest Substring Without Repeating Characters, null)));
 //        ListNode k1 = new ListNode(5, new ListNode(6, new ListNode(4, null)));
 //        addTwoNumbers(l1, k1);
 //    }
@@ -54,7 +54,7 @@
 //        System.out.print("The str is " + str + " and the str.length is " + str.length() + " | ");
 //        System.out.println(" ");
 //
-//        for (int k = str.length()-1; k >= 0; k--){
+//        for (int k = str.length()-1 - Two Sum; k >= 0; k--){
 //            System.out.println("The inserted element is " + str.charAt(k));
 //            l.next = new ListNode(Integer.parseInt(String.valueOf(str.charAt(k))));
 ////            l.next.val = (Integer.parseInt(String.valueOf(str.charAt(k))));

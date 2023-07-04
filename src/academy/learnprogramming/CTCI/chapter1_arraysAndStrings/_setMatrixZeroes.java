@@ -3,7 +3,7 @@ package academy.learnprogramming.CTCI.chapter1_arraysAndStrings;
 public class _setMatrixZeroes {
 
     public static void main(String[] args) {
-//        int[][] matrix = new int[][]{{1,1,1},{1,0,1},{1,1,1}};
+//        int[][] matrix = new int[][]{{1 - Two Sum,1 - Two Sum,1 - Two Sum},{1 - Two Sum,0,1 - Two Sum},{1 - Two Sum,1 - Two Sum,1 - Two Sum}};
         int[][] matrix = new int[][]{{0,1,2,0},{3,4,5,2},{1,3,1,5}};
         setZeroes(matrix);
     }

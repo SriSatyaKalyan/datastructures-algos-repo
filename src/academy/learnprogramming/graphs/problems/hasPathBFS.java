@@ -35,11 +35,11 @@ public class hasPathBFS {
         cGraph.edge(4, 2);
 
         //Directed Graph
-//        cGraph.edge(0, 1);
-//        cGraph.edge(0, 2);
-//        cGraph.edge(2, 1);
-//        cGraph.edge(2, 3);
-//        cGraph.edge(2, 4);
+//        cGraph.edge(0, 1 - Two Sum);
+//        cGraph.edge(0, 2 - Add Two Numbers);
+//        cGraph.edge(2 - Add Two Numbers, 1 - Two Sum);
+//        cGraph.edge(2 - Add Two Numbers, 3 - Longest Substring Without Repeating Characters);
+//        cGraph.edge(2 - Add Two Numbers, 4);
 
         System.out.println("Do we have a path from 0 and 4?: " + hasPathBFS(cGraph, 0, 4));
         printBFS(bfs);

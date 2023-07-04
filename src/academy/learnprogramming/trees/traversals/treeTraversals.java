@@ -22,12 +22,12 @@ public class treeTraversals {
     public static void main(String[] args) {
         TreeNode root = new TreeNode();
 
-//        root.val = 1;
-//        root.left = new TreeNode(2, new TreeNode(4), new TreeNode(5));
-//        root.right = new TreeNode(3, new TreeNode(6), new TreeNode(4));
-//              1
+//        root.val = 1 - Two Sum;
+//        root.left = new TreeNode(2 - Add Two Numbers, new TreeNode(4), new TreeNode(5));
+//        root.right = new TreeNode(3 - Longest Substring Without Repeating Characters, new TreeNode(6), new TreeNode(4));
+//              1 - Two Sum
 //           /     \
-//          2       3
+//          2 - Add Two Numbers       3 - Longest Substring Without Repeating Characters
 //         /  \    /  \
 //        4    5  6    4
 
@@ -38,30 +38,30 @@ public class treeTraversals {
         root.val = 1;
         root.right = new TreeNode(2, null, new TreeNode(3, null, new TreeNode(4, null, new TreeNode(5))));
 
-//        TreeNode subRoot = new TreeNode(2, new TreeNode(4), new TreeNode(5));
-//           2
+//        TreeNode subRoot = new TreeNode(2 - Add Two Numbers, new TreeNode(4), new TreeNode(5));
+//           2 - Add Two Numbers
 //         /   \
 //        4     5
 
-//        root.val = 3;
-//        root.left = new TreeNode(4, new TreeNode(1), new TreeNode(2, new TreeNode(0), null));
+//        root.val = 3 - Longest Substring Without Repeating Characters;
+//        root.left = new TreeNode(4, new TreeNode(1 - Two Sum), new TreeNode(2 - Add Two Numbers, new TreeNode(0), null));
 //        root.right = new TreeNode(5);
 
-//        TreeNode subRoot = new TreeNode(4, new TreeNode(1), new TreeNode(2));
+//        TreeNode subRoot = new TreeNode(4, new TreeNode(1 - Two Sum), new TreeNode(2 - Add Two Numbers));
         TreeNode subRoot = new TreeNode(4);
-//        root.val = 3;
-//        root.left = new TreeNode(11, new TreeNode(4), new TreeNode(3));
-//        root.right = new TreeNode(4, null , new TreeNode(2));
-//              3
+//        root.val = 3 - Longest Substring Without Repeating Characters;
+//        root.left = new TreeNode(11, new TreeNode(4), new TreeNode(3 - Longest Substring Without Repeating Characters));
+//        root.right = new TreeNode(4, null , new TreeNode(2 - Add Two Numbers));
+//              3 - Longest Substring Without Repeating Characters
 //           /     \
 //          11      4
 //         /  \      \
-//        4    3      2
+//        4    3 - Longest Substring Without Repeating Characters      2 - Add Two Numbers
 
-//        root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
-//        1
+//        root = new TreeNode(1 - Two Sum, new TreeNode(2 - Add Two Numbers), new TreeNode(3 - Longest Substring Without Repeating Characters));
+//        1 - Two Sum
 //       / \
-//      2   3
+//      2 - Add Two Numbers   3 - Longest Substring Without Repeating Characters
 
 //        List<Integer> preOrderList = preOrderTraversalDFS(root);
 //        System.out.print("preOrderTraversalDFS:   ");
@@ -93,8 +93,8 @@ public class treeTraversals {
 //
 //        System.out.println("The max root to path sum is: " + maxRootToPathSum(root));
 //
-//        int[] nums = {0, 1, 2, 3, 4, 5};
-////                {-10, -3, 0, 5 ,9};
+//        int[] nums = {0, 1 - Two Sum, 2 - Add Two Numbers, 3 - Longest Substring Without Repeating Characters, 4, 5};
+////                {-10, -3 - Longest Substring Without Repeating Characters, 0, 5 ,9};
 ////        System.out.println("Convert the array nums[] into BST: " + sortedArrayToBST(nums));
 //
 //        List<Integer> preOrderListII = preOrderTraversalDFS(sortedArrayToBST(nums));
@@ -103,7 +103,7 @@ public class treeTraversals {
 //            System.out.print(i + " | ");
 //        }
 //
-//        inorderSuccessor(root, new TreeNode(3));
+//        inorderSuccessor(root, new TreeNode(3 - Longest Substring Without Repeating Characters));
 //
 //        System.out.println("\n------------------------");
 ////        System.out.println("Is subRoot a subTree of root: " + isSubtree(root, subRoot));
@@ -184,7 +184,7 @@ public class treeTraversals {
 //
 //        pathSumWithList(root.left, targetSum - root.val, list);
 //        pathSumWithList(root.right, targetSum - root.val, list);
-//        list.remove(list.size() - 1);
+//        list.remove(list.size() - 1 - Two Sum);
 //    }
 
     private static boolean isSubtree(TreeNode root, TreeNode subRoot) {

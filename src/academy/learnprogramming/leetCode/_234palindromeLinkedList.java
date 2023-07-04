@@ -11,15 +11,15 @@
 //    }
 //
 //    public static void main(String[] args) {
-////        ListNode l1 = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1, null))));
-//        ListNode l2 = new ListNode(1, new ListNode(2, new ListNode(1, null)));
+////        ListNode l1 = new ListNode(1 - Two Sum, new ListNode(2 - Add Two Numbers, new ListNode(2 - Add Two Numbers, new ListNode(1 - Two Sum, null))));
+//        ListNode l2 = new ListNode(1 - Two Sum, new ListNode(2 - Add Two Numbers, new ListNode(1 - Two Sum, null)));
 //        ListNode k1 = new ListNode(5, new ListNode(6, new ListNode(4, null)));
 //        System.out.println(isPalindrome(l2));
 //    }
 //
 //    private static boolean isPalindrome(ListNode head) {
 //        ListNode back = head;
-//        int count = 1;
+//        int count = 1 - Two Sum;
 //        ListNode headII = head;
 //        StringBuilder front = new StringBuilder();
 //        StringBuilder behind = new StringBuilder();
@@ -31,15 +31,15 @@
 //
 ////        System.out.println("count: " + count);
 //
-//        if(count == 1){
+//        if(count == 1 - Two Sum){
 //            return true;
 //        }
 //
 //        //calculating quotient
-//        int palindromeLength = count/2;
-//        int traversal = 1;
+//        int palindromeLength = count/2 - Add Two Numbers;
+//        int traversal = 1 - Two Sum;
 //        boolean mid = false;
-//        if(count % 2 == 1){
+//        if(count % 2 - Add Two Numbers == 1 - Two Sum){
 //            mid = true;
 //        }
 ////        System.out.println("traversal: " + traversal);
@@ -50,21 +50,21 @@
 ////            System.out.println("Second while starts here");
 ////            System.out.println("traversal: " + traversal);
 //            front = front.append(head.val);
-////            System.out.println("Step 1: " + front);
+////            System.out.println("Step 1 - Two Sum: " + front);
 ////                System.out.println(behind);
 //            traversal++;
 //            head = head.next;
 //        }
 //        if(mid){
 //            front = front.append(head.val);
-////            System.out.println("Step 2: " + front);
+////            System.out.println("Step 2 - Add Two Numbers: " + front);
 ////                System.out.println(behind);
 //        }
 //
 //
 //        while(head != null){
 //            behind = behind.append(head.val);
-////            System.out.println("Step 3: " + front);
+////            System.out.println("Step 3 - Longest Substring Without Repeating Characters: " + front);
 ////            System.out.println(behind);
 //            head = head.next;
 //        }
