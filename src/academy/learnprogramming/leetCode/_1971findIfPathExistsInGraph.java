@@ -8,7 +8,7 @@ public class _1971findIfPathExistsInGraph {
     public static void main(String[] args) {
 
         int n = 3;
-        int[][] edges = {{0,1},{1,2},{2,0}};
+        int[][] edges = {{0, 1}, {1, 2}, {2, 0}};
         int source = 0;
         int destination = 2;
 
@@ -16,18 +16,6 @@ public class _1971findIfPathExistsInGraph {
     }
 
     private static boolean validPath(int n, int[][] edges, int source, int destination) {
-
-
-
-
-
-
-
-
-
-
-
-
 //        System.out.println("source: " + source + " && destination: " + destination);
 //        HashMap<Integer, ArrayList<Integer>> map = createAdjacencyList(edges);
 //        boolean[] visited = new boolean[edges.length];
@@ -44,10 +32,6 @@ public class _1971findIfPathExistsInGraph {
 //                }
 //            }
 //        }
-
-
-
-
 
         //code to traverse through the nodes
 //        while(map.get(i).size() > 0){
@@ -74,17 +58,17 @@ public class _1971findIfPathExistsInGraph {
 
     private static HashMap<Integer, ArrayList<Integer>> createAdjacencyList(int[][] edges) {
         HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
-        for(int i=0; i < edges.length; i++){
-            if(!map.containsKey(edges[i][0])){
+        for (int i = 0; i < edges.length; i++) {
+            if (!map.containsKey(edges[i][0])) {
                 map.put(edges[i][0], (new ArrayList<Integer>()));
                 map.get(edges[i][0]).add(edges[i][1]);
-            }else{
+            } else {
                 map.get(edges[i][0]).add(edges[i][1]);
             }
-            if(!map.containsKey(edges[i][1])){
+            if (!map.containsKey(edges[i][1])) {
                 map.put(edges[i][1], (new ArrayList<Integer>()));
                 map.get(edges[i][1]).add(edges[i][0]);
-            }else{
+            } else {
                 map.get(edges[i][1]).add(edges[i][0]);
             }
         }
@@ -94,11 +78,11 @@ public class _1971findIfPathExistsInGraph {
     }
 
     private static void printAdjacencyList(HashMap<Integer, ArrayList<Integer>> map) {
-        for(Integer key: map.keySet()){
+        for (Integer key : map.keySet()) {
             System.out.print(key + ": ");
         }
-        for(ArrayList values: map.values()){
-            for(Object value: values){
+        for (ArrayList values : map.values()) {
+            for (Object value : values) {
                 System.out.print(value + " ");
             }
             System.out.println("---------");
