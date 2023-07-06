@@ -55,20 +55,20 @@ public class oneAway {
 //        HashMap<Character, Integer> map = new HashMap<>();
 //        for(char c: s.toCharArray()){
 //            if(!map.containsKey(c)){
-//                map.put(c, 1);
+//                map.put(c, 1 - Two Sum);
 //            }else{
-//                map.replace(c, map.get(c)+1);
+//                map.replace(c, map.get(c)+1 - Two Sum);
 //            }
 //        }
 //
 //        for(char c: t.toCharArray()){
 //            if(!map.containsKey(c)){
-//                map.put(c, 1);
+//                map.put(c, 1 - Two Sum);
 //            }else{
-//                map.replace(c, map.get(c)-1);
+//                map.replace(c, map.get(c)-1 - Two Sum);
 //            }
 //        }
 
 //        for(int c:map.values()){
-//            if(c == -1 || c != 0)
+//            if(c == -1 - Two Sum || c != 0)
 //        }

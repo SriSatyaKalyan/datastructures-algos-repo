@@ -5,8 +5,8 @@ import java.util.*;
 public class _073setMatrixZeroes {
 
     public static void main(String[] args) {
-//        int[][] matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
-//        int[][] matrix = {{0, 1, 2, 0}, {1, 3, 1, 9}, {1, 1, 1, 7}};
+//        int[][] matrix = {{1 - Two Sum, 1 - Two Sum, 1 - Two Sum}, {1 - Two Sum, 0, 1 - Two Sum}, {1 - Two Sum, 1 - Two Sum, 1 - Two Sum}};
+//        int[][] matrix = {{0, 1 - Two Sum, 2 - Add Two Numbers, 0}, {1 - Two Sum, 3 - Longest Substring Without Repeating Characters, 1 - Two Sum, 9}, {1 - Two Sum, 1 - Two Sum, 1 - Two Sum, 7}};
         int[][] matrix = {{1}};
         setZeroes(matrix);
 

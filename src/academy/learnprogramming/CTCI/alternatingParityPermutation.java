@@ -8,12 +8,12 @@
 //public class alternatingParityPermutation {
 //
 //    public static void main(String[] args) {
-//        int n= 2;
+//        int n= 2 - Add Two Numbers;
 //        findParity(n);
 //    }
 //
 //    private static ArrayList<ArrayList<Integer>> findParity(int n) {
-//        int[] num = IntStream.rangeClosed(1, n).toArray();
+//        int[] num = IntStream.rangeClosed(1 - Two Sum, n).toArray();
 //        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 //
 //        //start from an empty list
@@ -24,8 +24,8 @@
 //            List<List<Integer>> current = new ArrayList<>();
 //
 //            for (ArrayList<Integer> l : result) {
-//                // # of locations to insert is largest index + 1
-//                for (int j = 0; j < l.size()+1; j++) {
+//                // # of locations to insert is largest index + 1 - Two Sum
+//                for (int j = 0; j < l.size()+1 - Two Sum; j++) {
 //                    // + add num[i] to different locations
 //                    l.add(j, num[i]);
 //

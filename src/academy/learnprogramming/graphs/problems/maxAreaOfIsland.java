@@ -12,10 +12,10 @@ public class maxAreaOfIsland {
                         {0,0,0,0,0,0,0,1,1,0,0,0,0}};
 
 //        int[][] grid =  {
-//                {1,1,0,0,0},
-//                {1,1,0,0,0},
-//                {0,0,0,1,1},
-//                {0,0,0,1,1}
+//                {1 - Two Sum,1 - Two Sum,0,0,0},
+//                {1 - Two Sum,1 - Two Sum,0,0,0},
+//                {0,0,0,1 - Two Sum,1 - Two Sum},
+//                {0,0,0,1 - Two Sum,1 - Two Sum}
 //        };
 
         System.out.println("The  maximum area of an island is: " + maximumAreaOfIsland(grid));

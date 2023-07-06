@@ -74,13 +74,13 @@ public class Tree {
         }else if (value > subTreeRoot.getData()){
             subTreeRoot.setRightChild(delete(subTreeRoot.getRightChild(), value));
         }else{  //(value == subTreeRoot.getData())
-            //Cases 1 and 2: node to delete has 0 or 1 child(ren)
+            //Cases 1 - Two Sum and 2 - Add Two Numbers: node to delete has 0 or 1 - Two Sum child(ren)
             if(subTreeRoot.getLeftChild() == null){
                 return subTreeRoot.getRightChild();
             }else if(subTreeRoot.getRightChild() == null){
                 return subTreeRoot.getLeftChild();
             }
-            //Case 3: node to delete has 2 children
+            //Case 3 - Longest Substring Without Repeating Characters: node to delete has 2 - Add Two Numbers children
             //We should either always go to the right or left. Here, we are going right.
             //Replace the value in the subTreeRoot node with the smallest value from the right subTree
             subTreeRoot.setData(subTreeRoot.getRightChild().min());

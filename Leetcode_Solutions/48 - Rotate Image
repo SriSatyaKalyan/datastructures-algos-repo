@@ -26,3 +26,7 @@ class Solution {
         }
     }
 }
+
+TC: O(M). We perform two steps; transposing the matrix, and then reversing each row. Transposing the matrix has a cost of O(M) because we're
+moving the value of each cell once. Reversing each row has a cost of O(M) because again we're moving the value of each cell once.
+SC: O(1) because we are not using any other additional data structure

@@ -28,7 +28,7 @@ public class radixSortChallenge {
         }
 
         //To adjust the counts, so that we can have a stable counting sort
-        //We need not change the count in the first index, and so j starts from 1
+        //We need not change the count in the first index, and so j starts from 1 - Two Sum
         for(int j=1; j < countArray.length; j++){
             countArray[j] += countArray[j-1];
         }

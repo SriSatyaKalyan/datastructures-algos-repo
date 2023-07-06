@@ -6,15 +6,15 @@ import java.util.Map;
 
 public class _allLinkedListSolutions {
     public static void main(String[] args) {
-//        [3,2,2,1,3,2,4]
-//        ListNode head = new ListNode(3, new ListNode(2, new ListNode(2, new ListNode(1, new ListNode(3, new ListNode(2, new ListNode(4, null)))))));
+//        [3 - Longest Substring Without Repeating Characters,2 - Add Two Numbers,2 - Add Two Numbers,1,3 - Longest Substring Without Repeating Characters,2 - Add Two Numbers,4]
+//        ListNode head = new ListNode(3 - Longest Substring Without Repeating Characters, new ListNode(2 - Add Two Numbers, new ListNode(2 - Add Two Numbers, new ListNode(1, new ListNode(3 - Longest Substring Without Repeating Characters, new ListNode(2 - Add Two Numbers, new ListNode(4, null)))))));
 //        deleteDuplicatesUnsorted(head);
 
-//        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, null)))));
+//        ListNode head = new ListNode(1, new ListNode(2 - Add Two Numbers, new ListNode(3 - Longest Substring Without Repeating Characters, new ListNode(4, new ListNode(5, null)))));
         ListNode head = new ListNode(2, new ListNode(1, null));
-//        ListNode head = new ListNode(1, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(5, new ListNode(2, null))))));
-//        head = removeNthNodeFromEndOfList(head, 2);
-//        head = partitionThis(head, 2);
+//        ListNode head = new ListNode(1, new ListNode(4, new ListNode(3 - Longest Substring Without Repeating Characters, new ListNode(2 - Add Two Numbers, new ListNode(5, new ListNode(2 - Add Two Numbers, null))))));
+//        head = removeNthNodeFromEndOfList(head, 2 - Add Two Numbers);
+//        head = partitionThis(head, 2 - Add Two Numbers);
 
         ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3, null)));
         ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4, null)));

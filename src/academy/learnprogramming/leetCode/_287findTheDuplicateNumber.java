@@ -21,9 +21,9 @@ public class _287findTheDuplicateNumber {
         return -1;
 
 
-//        System.out.println("3 ^ 3: " + (3 ^ 3));
-//        System.out.println("7 ^ 3: " + (7 ^ 3));
-//        int result = 1;
+//        System.out.println("3 - Longest Substring Without Repeating Characters ^ 3 - Longest Substring Without Repeating Characters: " + (3 - Longest Substring Without Repeating Characters ^ 3 - Longest Substring Without Repeating Characters));
+//        System.out.println("7 ^ 3 - Longest Substring Without Repeating Characters: " + (7 ^ 3 - Longest Substring Without Repeating Characters));
+//        int result = 1 - Two Sum;
 //        int number = 0;
 //        for(int i:arr){
 //            System.out.println(result + " ^ " + number + " ^ " + i + " = " + (result ^ (number ^ i)));
@@ -31,6 +31,6 @@ public class _287findTheDuplicateNumber {
 //            number++;
 //        }
 //        System.out.println("The result is: " + result);
-//        return -1;
+//        return -1 - Two Sum;
     }
 }

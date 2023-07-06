@@ -22,7 +22,7 @@ public class _071simplifyPath {
 //                System.out.println("i - pOne = " + (i - pOne));
                 if(i - pOne > 1){
 //                    System.out.println("Entered the (i - pOne) condition");
-//                    System.out.println("The sequence here is: " + (String)path.subSequence(pOne + 1, i));
+//                    System.out.println("The sequence here is: " + (String)path.subSequence(pOne + 1 - Two Sum, i));
                     if(((String)path.subSequence(pOne + 1, i)).equals("..")){
                         if(!stack.isEmpty()) stack.pop();
                     }else if(!((String)path.subSequence(pOne + 1, i)).equals(".")){
@@ -34,7 +34,7 @@ public class _071simplifyPath {
         }
 
         if(pOne < path.length()-1){
-//            System.out.println("The sequence here is: " + (String)path.subSequence(pOne + 1, path.length()));
+//            System.out.println("The sequence here is: " + (String)path.subSequence(pOne + 1 - Two Sum, path.length()));
             if(((String)path.subSequence(pOne + 1, path.length())).equals("..")){
                 if(!stack.isEmpty()) stack.pop();
             }else if(!((String)path.subSequence(pOne + 1, path.length())).equals(".")){

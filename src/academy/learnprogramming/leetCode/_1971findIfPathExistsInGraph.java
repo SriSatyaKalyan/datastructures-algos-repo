@@ -1,7 +1,6 @@
 package academy.learnprogramming.leetCode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 
 public class _1971findIfPathExistsInGraph {
 
@@ -16,91 +15,73 @@ public class _1971findIfPathExistsInGraph {
     }
 
     private static boolean validPath(int n, int[][] edges, int source, int destination) {
-//        System.out.println("source: " + source + " && destination: " + destination);
-//        HashMap<Integer, ArrayList<Integer>> map = createAdjacencyList(edges);
-//        boolean[] visited = new boolean[edges.length];
-//
-//        if(map.containsKey(source)){
-//            if(!visited[source]){
-//                System.out.println("The value of visited["+ source + "]" + " is " + visited[source]);
-//                visited[source] = true;
-//                System.out.println("The value of visited["+ source + "]" + " is " + visited[source]);
-//                ArrayList neighbors = map.get(source);
-//                for(Object neighbor : neighbors){
-//                    if((Integer)neighbor == destination) return true;
-//                    validPath(n, edges, (Integer) neighbor, destination);
-//                }
-//            }
-//        }
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+        for (int[] edge : edges) {
+            int a = edge[0], b = edge[1];
+            graph.computeIfAbsent(a, val -> new ArrayList<Integer>()).add(b);
+            graph.computeIfAbsent(b, val -> new ArrayList<Integer>()).add(a);
+        }
 
-        //code to traverse through the nodes
-//        while(map.get(i).size() > 0){
-//            System.out.println("The value of visited["+ i + "]" + " is " + visited[i]);
-//            if(!visited[i]){
-//                visited[i] = true;
-//                System.out.println("The value of visited["+ i + "]" + " is " + visited[i]);
-//                ArrayList arr = map.get(i);
-//                System.out.println("The value that is being traversed is: " + i);
-//                for(int j=0; j < arr.size(); j++){
-//                    System.out.println("Is the destination: " + arr.get(j));
-//                    if(arr.get(j).equals(destination)){
-//                        return true;
-//                    }
-//                    validPath(n, edges, (Integer) arr.get(j), destination);
+        List<Integer> visited = new ArrayList<>();
+        return dfsRecursive(graph, visited, source, destination);
+
+//      BFS - Iterative
+//        Queue<Integer> queue = new LinkedList<>();
+//        queue.offer(source);
+//
+//        while (!queue.isEmpty()) {
+//            int currNode = queue.poll();
+//            if (currNode == destination) {
+//                return true;
+//            }
+//
+//            // For all the neighbors of the current node, if we haven't visited it before,
+//            // add it to 'queue' and mark it as visited.
+//            for (int nextNode : graph.get(currNode)) {
+//                if (!seen[nextNode]) {
+//                    seen[nextNode] = true;
+//                    queue.offer(nextNode);
 //                }
 //            }
-//            i++;
 //        }
-        //end code
+//      --------------------------------------------------------------------------------------------
+
+//      DFS - Iterative
+//        Stack<Integer> stack = new Stack<>();
+//        stack.push(source);
+//
+//        while (!stack.isEmpty()) {
+//            int currNode = stack.pop();
+//            if (currNode == destination) {
+//                return true;
+//            }
+//
+//            for (int nextNode : graph.get(currNode)) {
+//                if (!seen[nextNode]) {
+//                    seen[nextNode] = true;
+//                    stack.push(nextNode);
+//                }
+//            }
+//        }
+//      --------------------------------------------------------------------------------------------
+
+
+//      --------------------------------------------------------------------------------------------
+
+//        return false;
+    }
+
+//  DFS - Recursive
+    private static boolean dfsRecursive(Map<Integer, List<Integer>> graph, List<Integer> visited, int source, int destination) {
+        if(source == destination) return true;
+        if(visited.contains(source)) return false;
+
+        visited.add(source);
+
+        for(int neighbor: graph.get(source)){
+            if(dfsRecursive(graph, visited, neighbor, destination)) return true;
+        }
 
         return false;
     }
-
-    private static HashMap<Integer, ArrayList<Integer>> createAdjacencyList(int[][] edges) {
-        HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
-        for (int i = 0; i < edges.length; i++) {
-            if (!map.containsKey(edges[i][0])) {
-                map.put(edges[i][0], (new ArrayList<Integer>()));
-                map.get(edges[i][0]).add(edges[i][1]);
-            } else {
-                map.get(edges[i][0]).add(edges[i][1]);
-            }
-            if (!map.containsKey(edges[i][1])) {
-                map.put(edges[i][1], (new ArrayList<Integer>()));
-                map.get(edges[i][1]).add(edges[i][0]);
-            } else {
-                map.get(edges[i][1]).add(edges[i][0]);
-            }
-        }
-
-//        printAdjacencyList(map);
-        return map;
-    }
-
-    private static void printAdjacencyList(HashMap<Integer, ArrayList<Integer>> map) {
-        for (Integer key : map.keySet()) {
-            System.out.print(key + ": ");
-        }
-        for (ArrayList values : map.values()) {
-            for (Object value : values) {
-                System.out.print(value + " ");
-            }
-            System.out.println("---------");
-        }
-    }
-
-
-//    private static boolean validPath(int n, int[][] edges, int source, int destination) {
-//        for(int i=0; i < edges.length; i++){
-//            System.out.println("The edge being considered is: " + edges[i][0]);
-//            if(edges[i][0] == source){
-//                if(edges[i][1] == destination){
-//                    return true;
-//                }
-//            }else{
-//                validPath(n, edges, edges[i][1], destination);
-//            }
-//        }
-//        return false;
-//    }
 }

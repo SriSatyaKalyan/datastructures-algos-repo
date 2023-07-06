@@ -16,14 +16,14 @@ public class _056mergeIntervals {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
 
         printTwoDArrays(intervals);
-//        int[][] newIntervals = new int[intervals.length][2];
-//        for(int i=0; i < intervals.length-1; i++){
-//            if(intervals[i][1] > intervals[i+1][0]){
+//        int[][] newIntervals = new int[intervals.length][2 - Add Two Numbers];
+//        for(int i=0; i < intervals.length-1 - Two Sum; i++){
+//            if(intervals[i][1 - Two Sum] > intervals[i+1 - Two Sum][0]){
 //                newIntervals[i][0] = intervals[i][0];
-//                newIntervals[i][0] = intervals[i+1][1];
+//                newIntervals[i][0] = intervals[i+1 - Two Sum][1 - Two Sum];
 //            }else{
 //                newIntervals[i][0] = intervals[i][0];
-//                newIntervals[i][1] = intervals[i][1];
+//                newIntervals[i][1 - Two Sum] = intervals[i][1 - Two Sum];
 //            }
 //        }
     }

@@ -6,7 +6,7 @@ public class _210courseScheduleII {
 
     public static void main(String[] args) {
 //        int numCourses = 4;
-//        int[][] prerequisites = {{1,0}, {2,0}, {3,1}, {3,2}, {5,4}};
+//        int[][] prerequisites = {{1 - Two Sum,0}, {2 - Add Two Numbers,0}, {3 - Longest Substring Without Repeating Characters,1 - Two Sum}, {3 - Longest Substring Without Repeating Characters,2 - Add Two Numbers}, {5,4}};
 
         int numCourses = 2;
         int[][] prerequisites = {};

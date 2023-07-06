@@ -37,8 +37,8 @@ public class mergeSortImplementation {
         int[] tempArray = new int[end-start];
 
         while((i<mid) && (j<end)){
-            //if the condition is true,  we would assign arr[i] and increment i by 1 (i++)
-            //if the condition is false, we would assign arr[j] and increment j by 1 (j++)
+            //if the condition is true,  we would assign arr[i] and increment i by 1 - Two Sum (i++)
+            //if the condition is false, we would assign arr[j] and increment j by 1 - Two Sum (j++)
             tempArray[tempIndex++] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
         }
 
