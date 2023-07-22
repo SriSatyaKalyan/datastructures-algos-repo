@@ -1,5 +1,9 @@
 package academy.learnprogramming.trees.implementation;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class Tree {
 
     private TreeNode root;
@@ -32,6 +36,13 @@ public class Tree {
             root.traversePostOrder();
         }
         System.out.println("| ");
+    }
+
+
+    public void levelOrderTraversal(int i){
+//        if(root != null){
+//            traverseLevelOrder(0, root);
+//        }
     }
 
     //Get Method for the Tree

@@ -1,5 +1,9 @@
 package academy.learnprogramming.trees.implementation;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class TreeNode {
 
     private int data;
@@ -65,6 +69,29 @@ public class TreeNode {
         System.out.print(data + " | ");
     }
 
+    HashMap<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
+//    int level = 0;
+    public void traverseLevelOrder(int i, TreeNode root) {
+        levelTraversal(i, map, root);
+    }
+
+    private void levelTraversal(int level, HashMap<Integer, List<Integer>> map, TreeNode root) {
+        if(!map.containsKey(level)){
+            map.put(level, new ArrayList<>());
+            map.get(level).add(root.data);
+        }else{
+            map.get(level).add(root.data);
+        }
+
+        if(root.leftChild != null){
+            traverseLevelOrder(level+1, root.leftChild);
+        }
+
+        if(root.rightChild != null){
+            traverseLevelOrder(level+1, root.rightChild);
+        }
+    }
+
     //Get Method for the TreeNode
     public TreeNode get(int value){
         if(value == data){
@@ -126,4 +153,6 @@ public class TreeNode {
     public void setRightChild(TreeNode rightChild) {
         this.rightChild = rightChild;
     }
+
+
 }

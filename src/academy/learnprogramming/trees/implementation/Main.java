@@ -26,6 +26,9 @@ public class Main {
         System.out.println("Post Order");
         intTree.traversePostOrder();
 
+        System.out.println("Level Order");
+        intTree.levelOrderTraversal(0);
+
         //Testing how get works
 //        System.out.println(intTree.get(27).getData());
 //        System.out.println(intTree.get(22).getData());
