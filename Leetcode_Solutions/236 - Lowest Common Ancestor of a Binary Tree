@@ -8,36 +8,21 @@
  * }
  */
 class Solution {
-
-    private TreeNode ans;
-
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        this.recurseTree(root, p, q);
-        return this.ans;
-    }
+         if(root == null){
+            return null;
+         }
 
-    private boolean recurseTree(TreeNode currentNode, TreeNode p, TreeNode q){
+         if(root.equals(p) || root.equals(q)){
+            return root;
+         }
 
-        //if the end of the branch is reached, return false;
-        if(currentNode == null){
-            return false;
-        }
+         TreeNode left = lowestCommonAncestor(root.left, p, q);
+         TreeNode right = lowestCommonAncestor(root.right, p, q);
 
-        //Left Recursion. If the left recursion returns true, set left = 1 else 0
-        int left = this.recurseTree(currentNode.left, p, q) ? 1 : 0;
+         if(left != null && right != null) return root;
 
-        int right = this.recurseTree(currentNode.right, p, q) ? 1 : 0;
-
-        //if the current node is p or q
-        int mid = (currentNode == p || currentNode == q) ? 1 : 0;
-
-        //if any two of the flags left, right or mid become true
-        if(mid + left + right == 2){
-            this.ans = currentNode;
-        }
-
-        //return true if any of the three boolean values is true
-        return (mid + left + right > 0);
+         return (left != null)? left : right;
     }
 }
 
