@@ -4,7 +4,7 @@ package academy.learnprogramming.dynamicProgramming;
 
 import java.util.HashMap;
 
-public class canSumTutorial {
+public class canSumMemoization {
 
     public static void main(String[] args) {
         System.out.println("For the target: 7, the result is: " + canSum(7, new int[]{2, 3}));
@@ -41,3 +41,6 @@ public class canSumTutorial {
         return false;
     }
 }
+
+//SC:
+//TC:
