@@ -1,42 +1,40 @@
 class MinStack {
 
-    ArrayList<Integer> stack;
-    int minElement;
+    private Stack<int[]> stack = new Stack<>();
 
     public MinStack() {
-        stack = new ArrayList<Integer>();
+
     }
 
     public void push(int val) {
-        stack.add(val);
-        if(stack.size() == 1){
-            minElement = val;
-        }else{
-            if(val < minElement){
-                minElement = val;
-            }
+        // If the stack is empty, then the min value must just be the first value we add
+        if(stack.isEmpty()){
+            stack.push(new int[]{val, val});
+            return;
         }
+
+        int currentMin = stack.peek()[1];
+        stack.push(new int[]{val, Math.min(val, currentMin)});
     }
 
     public void pop() {
-        int popValue = stack.get(stack.size() - 1);
-        stack.remove(stack.size() - 1);
-
-        if(minElement == popValue && stack.size() >= 1){
-            minElement = stack.get(0);
-            for(int i : stack){
-                minElement = i < minElement ? i : minElement;
-            }
-        }
+        stack.pop();
     }
 
     public int top() {
-        int popValue = stack.get(stack.size() - 1);
-        return popValue;
+        return stack.peek()[0];
     }
 
     public int getMin() {
-        return minElement;
+        return stack.peek()[1];
     }
 }
 
+TC: O(1) for all operations
+push(): Checking the top of the Stack, comparing numbers and pushing to the top of the Stack are all O(1) operations.
+        Therefore, this is an overall O(1) operation.
+pop(): Popping from the Stack is an O(1) operation.
+top(): Looking at the top of the Stack is an O(1) operation.
+getMin(): The operation is O(1) because we are not comparing values to find it. If we had not kept track of it on the Stack,
+          and instead search for it every time, then it would have been an O(n) operation.
+SC: Worst case scenario is that all operations are push. In this case, it will be O(2 * n) = O(n) complexity.

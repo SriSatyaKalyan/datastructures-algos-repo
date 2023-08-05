@@ -1,0 +1,57 @@
+class MyQueue {
+
+    private Stack<Integer> s1;
+    private Stack<Integer> s2;
+    private int front;
+
+    public MyQueue() {
+        s1 = new Stack<Integer>();
+        s2 = new Stack<Integer>();
+    }
+
+    public void push(int x) {
+        if (s1.empty())
+            front = x;
+        s1.push(x);
+    }
+
+    public int pop() {
+        if (s2.isEmpty()) {
+            while (!s1.isEmpty())
+                s2.push(s1.pop());
+        }
+        return s2.pop();
+    }
+
+    public int peek() {
+        if (!s2.isEmpty()) {
+                return s2.peek();
+        }
+        return front;
+    }
+
+    public boolean empty() {
+        return s1.isEmpty() && s2.isEmpty();
+    }
+}
+
+Push Operation:
+TC: O(1). Appending an element to a stack is an O(1) operation
+SC: O(n). We need additional memory to store the queue elements
+
+Pop Operation:
+TC: Amortized O(1). Worst-case O(n). In the worst case scenario, when the stack s2 is empty, the algorithm pops n elements from stack
+    s1 and pushes n elements to s2, where n is the queue size. This gives 2n operations, which is O(n). But when stack s2 is not empty,
+    the algorithm has O(1) time complexity.
+SC: O(1)
+
+Amortized Analysis gives the average performance (over time) of each operation in the worst case. The basic idea is that a worst case
+operation can alter the state in such a way that the worst case cannot occur again for a long time, thus amortizing its cost.
+
+Empty:
+TC: O(1)
+SC: O(1)
+
+Peek:
+TC: O(1). The front element was either previously calculated or returned as a top element of stack s2. Therefore complexity is O(1).
+SC: O(1)
