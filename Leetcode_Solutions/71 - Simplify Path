@@ -1,0 +1,40 @@
+class Solution {
+    public String simplifyPath(String path) {
+        Stack<String> stack = new Stack<>();
+        StringBuilder finalpath = new StringBuilder();;
+
+        int pOne = 0;
+
+        for(int i = 1; i < path.length(); i++){
+            if(path.charAt(i) == '/'){
+                if(i - pOne > 1){
+                    if(((String)path.subSequence(pOne + 1, i)).equals("..")){
+                        if(!stack.isEmpty()) stack.pop();
+                    }else if(!((String)path.subSequence(pOne + 1, i)).equals(".")){
+                        stack.push((String) path.subSequence(pOne + 1, i));
+                    }
+                }
+                pOne = i;
+            }
+        }
+
+        if(pOne < path.length()-1){
+            if(((String)path.subSequence(pOne + 1, path.length())).equals("..")){
+                if(!stack.isEmpty()) stack.pop();
+            }else if(!((String)path.subSequence(pOne + 1, path.length())).equals(".")){
+                stack.push((String) path.subSequence(pOne + 1, path.length()));
+            }
+        }
+
+        if(stack.isEmpty()) return "/";
+
+        while(!stack.isEmpty()){
+            finalpath.insert(0, "/" + stack.pop());
+        }
+
+        return finalpath.toString();
+    }
+}
+
+TC: O(N) where N is the length of the string
+SC: O(N)

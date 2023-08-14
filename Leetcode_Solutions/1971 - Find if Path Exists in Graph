@@ -1,57 +1,39 @@
+//DFS Recursive
+
 class Solution {
-
-    private boolean hasPath = false;
     public boolean validPath(int n, int[][] edges, int source, int destination) {
+        Map<Integer, List<Integer>> graph = new HashMap<>();
+        for (int[] edge : edges) {
+            int a = edge[0], b = edge[1];
+            graph.computeIfAbsent(a, val -> new ArrayList<Integer>()).add(b);
+            graph.computeIfAbsent(b, val -> new ArrayList<Integer>()).add(a);
+        }
 
+        boolean[] seen = new boolean[n];
+        return dfsRecursive(graph, seen, source, destination);
+    }
+
+    private static boolean dfsRecursive(Map<Integer, List<Integer>> graph, boolean[] seen, int source, int destination) {
         if(source == destination) return true;
+        if(seen[source]) return false;
 
-        Map<Integer, Set<Integer>> graph = buildGraph(edges);
-        bfs(graph, source, destination);
+        seen[source] = true;
 
-        return hasPath;
-    }
-
-    private Map<Integer, Set<Integer>> buildGraph(int[][] edges){
-        Map<Integer, Set<Integer>> graph = new HashMap<>();
-
-        for(int[] edge: edges){
-            insertAtGraph(edge[0], edge[1], graph);
-            insertAtGraph(edge[1], edge[0], graph);
+        for(int neighbor: graph.get(source)){
+            if(dfsRecursive(graph, seen, neighbor, destination)) return true;
         }
 
-        return graph;
-    }
-
-    private void insertAtGraph(int key, int value, Map<Integer, Set<Integer>> map){
-        if(map.containsKey(key)){
-            map.get(key).add(value);
-        }else{
-            Set<Integer> list = new HashSet<>();
-            list.add(value);
-            map.put(key, list);
-        }
-    }
-
-    private void bfs(Map<Integer, Set<Integer>> graph, int source, int destination){
-        Queue<Integer> queue = new ArrayDeque<>(List.of(source));
-        Set<Integer> visited = new HashSet<>();
-
-        while(!queue.isEmpty()){
-            int current = queue.remove();
-            if(current == destination){
-                hasPath = true;
-                return;
-            }
-
-            visited.add(current);
-            for(int child: graph.get(current)){
-                if(!visited.contains(child)){
-                    queue.add(child);
-                }
-            }
-
-        }
+        return false;
     }
 }
 
-//Should figure out TC and SC
+TC: O(n + m)
+    In typical DFS Search, the time complexity is O(V + E) where V, E are the number of vertices and edges. More specifically, there are n nodes and m edges in this problem.
+    -> We build adjacent list of all m edges in graph which takes O(m)
+    -> Each node is only visited once, it takes O(n) to traverse all nodes
+    So, the overall time complexity is O(n + m)
+SC: O(n + m)
+    -> We use a hash map to store m edges, which takes O(m) space
+    -> We use a bool array seen to keep track of the visited nodes, which requires O(n) space
+    -> The recursive function takes O(n) space
+    The overall complexity is O(n + m)

@@ -1,0 +1,26 @@
+class Solution {
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Stack<Integer> stack = new Stack<Integer>();
+        int[] ans = new int[nums1.length];
+
+        for(int i = 0; i < nums2.length; i++){
+            map.putIfAbsent(nums2[i], -1);
+            while(!stack.isEmpty() && stack.peek() < nums2[i]){
+                map.put(stack.pop(), nums2[i]);
+            }
+
+            stack.push(nums2[i]);
+        }
+
+        for(int i = 0; i < nums1.length; i++){
+            ans[i] = map.get(nums1[i]);
+        }
+
+        return ans;
+    }
+}
+
+TC: O(n), The entire nums2 array (of size n) is scanned only once. Each of the stack's n elements are pushed and popped exactly once. The nums1 array is also scanned only once.
+    All together, this requires O(n + n + m) time. But since nums1 is a subset of nums2, we know that (n + n + m) ~ n. So, O(n) is the time complexity
+SC: O(n). The HashMap map will store n key-value pairs while stack will contain at most n elements at any given time

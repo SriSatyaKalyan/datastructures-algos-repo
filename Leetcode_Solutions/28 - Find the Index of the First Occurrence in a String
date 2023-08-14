@@ -1,0 +1,23 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+        int m = needle.length();
+        int n = haystack.length();
+
+        for (int windowStart = 0; windowStart <= n - m; windowStart++) {
+            for (int i = 0; i < m; i++) {
+                if (needle.charAt(i) != haystack.charAt(windowStart + i)) {
+                    break;
+                }
+                if (i == m - 1) {
+                    return windowStart;
+                }
+            }
+        }
+
+        return -1;
+    }
+}
+
+TC: O(n * m) where m is needle length and n is haystack length. For every check, we have to iterate at least m times. There are n-m+1 times.
+    So it is ((n - m + 1) * (m)) ~ nm.
+SC: O(1) as the handful of checks are made every single time no matter the length of the needle.

@@ -1,0 +1,37 @@
+class Solution {
+
+    Stack<Integer> stack = new Stack<Integer>();
+
+    public int calPoints(String[] operations) {
+        for(int i = 0; i < operations.length; i++){
+            // System.out.print(operations[i] + " || ");
+            if(operations[i].equals("C")){
+                stack.pop();
+            }else if(operations[i].equals("D")){
+                stack.push(stack.peek() * 2);
+            }else if(operations[i].equals("+")){
+                addPreviousTwo(stack);
+            }else{
+                int val = Integer.valueOf(operations[i]);
+                stack.push(val);
+            }
+        }
+
+        int ans = 0;
+        while(!stack.isEmpty()){
+            ans += stack.pop();
+        }
+
+        return ans;
+    }
+
+    public void addPreviousTwo(Stack<Integer> stack){
+        int firstElement = stack.pop();
+        int secondElement = stack.peek();
+        stack.push(firstElement);
+        stack.push(firstElement + secondElement);
+    }
+}
+
+TC: O(N) where N is the length of the operations array. Because we parse through every element in the array once, and do O(1) work for each element
+SC: O(N) is the space used in the stack in the chance of just having to add all the elements into stack

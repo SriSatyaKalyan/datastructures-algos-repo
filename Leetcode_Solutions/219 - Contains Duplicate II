@@ -1,0 +1,21 @@
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < nums.length; i++){
+            if(map.containsKey(nums[i])){
+                if(i - map.get(nums[i]) <= k){
+                    return true;
+                }else{
+                    map.replace(nums[i], i);
+                }
+            }else{
+                map.put(nums[i], i);
+            }
+        }
+
+        return false;
+    }
+}
+
+TC: O(n). We do n operations of search, delete and insert, each with constant time complexity, in the worst case of all elements being different.
+SC: O(min(n, k)). The extra space required depends on the number of items stored in the hashtable, which is the size of the sliding window, min(n, k).

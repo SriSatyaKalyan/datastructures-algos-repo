@@ -1,0 +1,20 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length <= 1) {
+            return nums.length;
+        }
+        int twoPointer = 0;
+        int compareElement = nums[0];
+        for(int i=1; i < nums.length; i++){
+            if(nums[i] != compareElement){
+                compareElement = nums[i];
+                nums[++twoPointer] = nums[i];
+            }
+        }
+
+        return twoPointer+1;
+    }
+}
+
+TC: O(N), since we have only 2 pointers, and both the pointers will traverse the array at most once
+SC: O(1), since constant space is used no matter the size of the array

@@ -1,0 +1,23 @@
+class Solution {
+    List<Integer> list;
+    public List<Integer> preorderTraversal(TreeNode root) {
+        list = new ArrayList<Integer>();
+
+        traversePreOrder(root);
+        return list;
+    }
+
+    public void traversePreOrder(TreeNode root){
+        if(root == null) { return; }
+        list.add(root.val);
+        if(root.left != null){
+            traversePreOrder(root.left);
+        }
+        if(root.right != null){
+            traversePreOrder(root.right);
+        }
+    }
+}
+
+TC: O(n)
+SC: O(n)

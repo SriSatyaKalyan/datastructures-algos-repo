@@ -1,0 +1,24 @@
+class Solution {
+    List<Integer> list;
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+        list = new ArrayList<Integer>();
+
+        traverseInOrder(root);
+        return list;
+    }
+
+    public void traverseInOrder(TreeNode root){
+        if(root == null) { return; }
+        if(root.left != null){
+            traverseInOrder(root.left);
+        }
+        list.add(root.val);
+        if(root.right != null){
+            traverseInOrder(root.right);
+        }
+    }
+}
+
+TC: O(n)
+SC: O(n)
