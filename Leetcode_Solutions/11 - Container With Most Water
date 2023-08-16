@@ -1,0 +1,25 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int maxArea = 0;
+        int currArea = 0;
+
+        int left = 0;
+        int right = height.length - 1;
+
+        while(left < right){
+            currArea = Math.min(height[left], height[right]) * (right -left);
+            maxArea = maxArea < currArea ? currArea : maxArea;
+
+            if(height[left] <= height[right]){
+                left++;
+            }else{
+                right--;
+            }
+        }
+
+        return maxArea;
+    }
+}
+
+SC: O(1) because we are using constant space
+TC: O(n) because this is Single Pass

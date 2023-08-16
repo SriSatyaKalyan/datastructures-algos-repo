@@ -19,18 +19,18 @@ public class canSumMemoization {
     }
 
     private static boolean canSum(int target, int[] arr, HashMap<Integer, Boolean> memo) {
-//        System.out.println("target: " + target);
+        // System.out.println("target: " + target);
         if(memo.containsKey(target)) {
-//            System.out.println("memo contains the target");
+            // System.out.println("memo contains the target");
             return memo.get(target);
         }
+
         if(target == 0) return true;
         if(target < 0) return false;
 
         for(int i : arr){
             int remainder = target - i;
-//            System.out.println("i: " + i + " || remainder: " + remainder);
-
+            // System.out.println("i: " + i + " || remainder: " + remainder);
             if(canSum(remainder, arr, memo)){
                 memo.put(target, true);
                 return true;
