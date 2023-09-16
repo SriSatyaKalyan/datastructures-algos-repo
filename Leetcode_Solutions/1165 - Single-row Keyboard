@@ -1,0 +1,23 @@
+class Solution {
+    public int calculateTime(String keyboard, String word) {
+        char[] keyChar = keyboard.toCharArray();
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for(int i = 0; i < keyboard.length(); i++){
+            map.put(keyboard.charAt(i), i);
+        }
+
+        int len = 0;
+        int prev = 0;
+        for(int i = 0; i < word.length(); i++){
+            int val = map.get(word.charAt(i)) -  prev;
+            len += Math.abs(val);
+            prev = map.get(word.charAt(i));
+        }
+
+        return len;
+    }
+}
+
+TC: O(n) where n is the length of the word, since we need to traverse the word. An additional constant of O(26) = O(1) is needed to iterate through the keyboard
+SC: O(1). The algorithm requires constant space to store indices for 26 letters in the hashmap
