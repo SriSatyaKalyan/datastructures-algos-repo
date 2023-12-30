@@ -2,6 +2,8 @@ package academy.learnprogramming.leetCodeSolutions;
 
 import java.util.HashMap;
 
+// https://leetcode.com/problems/redistribute-characters-to-make-all-strings-equal
+
 public class _1897 {
     public static void main(String[] args) {
         String[] arr = {"abc", "aabc", "bc", "c", "aabbc"};
