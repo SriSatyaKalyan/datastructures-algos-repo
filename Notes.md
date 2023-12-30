@@ -44,7 +44,7 @@ For example, for `n!`, we cannot find a tight bound in terms of Big Oh or Omega 
 - Check for case-sensitivity
 - Check for significance of white space
 - Ask if the operation has to be performed in-place
- - If this is the case
+    - If this is the case, it is easiest to modify strings from going from the end to the beginning
 
 ### Linked List
 - XXXXXX
